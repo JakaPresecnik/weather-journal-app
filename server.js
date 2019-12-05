@@ -33,13 +33,11 @@ app.post('/addEntry', addEntry);
 //function that stores data
 function addEntry(req,res) {
   newEntry = {
-
-
-// TO BE ADDED LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
+    entryDate: req.body.date,
+    temperature: req.body.temperature,
+    feelings: req.body.feelings,
   }
-  data.push(req.body);
-  console.log(data);
+  data.push(newEntry);
+//  console.log(data);
 }
-/*POST, GET  and storing data not done */
+/*POST, GET  and storing data done */
