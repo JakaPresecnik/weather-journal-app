@@ -6,14 +6,14 @@ body{
 
 #app{
     display: grid;
-/*    grid-auto-rows: minmax(150px, auto);*/
+    grid-auto-rows: minmax(150px, auto);
 /*    grid-template-columns: */
-/*  height:100vh; */
+    height:100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
-    font-size: 2em;
+    font-size: 1em;
     font-family: 'Oswald', sans-serif;
 }
 
