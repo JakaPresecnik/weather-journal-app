@@ -60,8 +60,5 @@ const postData = async (url = '', data = {}) => {
     }
 }
 /// test - remove when done
-// postData('/addEntry', {date: newDate, weather: 'sunny', journal: 'it was a sunny day, and it was hot'});
 // postData('/addEntry', {date: newDate, weather: 'cloudy', journal: 'it was a cloudy and cold'});
 /* POST DATA DONE */
-
-/* Get data from server */
