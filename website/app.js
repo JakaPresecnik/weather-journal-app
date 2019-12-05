@@ -18,11 +18,10 @@ function performAction(e) {
   let feelings = document.getElementById('feelings').value;
   retriveData (baseURL, zip, country, apiKey)
   // sending the needed data to the server:
-  //temperature, date, journal
+  //temperatre, date, journal
   .then((data) => {
       postData('/addEntry', {date: newDate, temperature: data.main.temp, feelings: feelings});
-    })
-    .then(updateUI)
+    });
 }
 // Function for event listener DONE
 
@@ -37,19 +36,8 @@ const retriveData = async(baseURL, zip, country, apiKey) => {
     console.log('error', error);
   }
 }
-// DONE
-//(5) Updating the DOM:
-const updateUI = async() => {
-  const request = await fetch ('/all')
-  try {
-    const allData = await request.json();
-    document.getElementById('date').innerHTML = allData[0].entryDate;
-    document.getElementById('temp').innerHTML = allData[0].temperature;
-    document.getElementById('content').innerHTML = allData[0].feelings;
-  }catch (error) {
-    console.log('error', error);
-  }
-}
+// DONE - *(if error reset the function to be before performAction)*
+
 /* (1) POST data to server */
 const postData = async (url = '', data = {}) => {
   //can be removed when done
@@ -72,6 +60,5 @@ const postData = async (url = '', data = {}) => {
     }
 }
 /// test - remove when done
-// postData('/addEntry', {date: newDate, weather: 'sunny', journal: 'it was a sunny day, and it was hot'});
 // postData('/addEntry', {date: newDate, weather: 'cloudy', journal: 'it was a cloudy and cold'});
 /* POST DATA DONE */
