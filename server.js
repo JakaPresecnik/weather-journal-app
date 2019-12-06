@@ -27,7 +27,6 @@ app.get('/all', (req, res) => res.send(projectData));
 //POST
 app.post('/add', (res, req) => res.send('POST recieved!'));
 //Store data on server side:
-const data = [];
 app.post('/addEntry', addEntry);
 
 //function that stores data

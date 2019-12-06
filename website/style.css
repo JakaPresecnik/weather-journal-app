@@ -1,88 +1,106 @@
 body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    margin: auto;
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+  display: grid;
+  grid-auto-rows: minmax(150px, auto);
+  /* grid-template-columns:  */
+  height:100vh;
+  background: #3456e0;
+  color: #ffc94b;
+  justify-content: center;
+  grid-gap: 1em;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.headline {
+  background: rgba(59, 74, 107, .4);
+  color: #ffc94b;
+  text-align: center;
 }
 
 .holder{
-
+  padding: 0 0.7em;
+}
+.zip,
+.country {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .entry{
-    background: rgba(59, 74, 107, .4);
+  background: rgba(59, 74, 107, .4);
+  min-height: 30%;
 }
 
 #entryHolder{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "dt tm"
+  "ct ct";
+  padding: 0.5em 0.8em;
 
 }
 
 #date{
-
+  grid-area: dt;
 }
 
 #temp{
-
+  text-align: right;
+  grid-area: tm;
 }
 
 #content{
-
+  grid-area: ct;
 }
 
-.headline {
 
-}
 .title{
 
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
-    display:block;
-    font-size: 27px;
+
 }
 
 input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
+  width: 100%;
+  max-width: 200px;
+  background:#22b2da;
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+
 }
 
 button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
+  display: block;
+  margin: auto;
+  width: 70px;
+  height: 30px;
+  background: #037595;
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  box-shadow: 2px 4px 5px #444;
 }
 h1{
-    font-size: 36px;
+  font-size: 36px;
 }
 
 textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+  width: 100%;
+  background:#22b2da;
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
@@ -92,20 +110,19 @@ button:focus {
     outline: none;
 }
 /* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+::placeholder { /* Firefox, Chrome, Opera */
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
+}
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+}
 
-} 
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffc94b;
+  font-family: 'Oswald', sans-serif;
+
+}

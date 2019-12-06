@@ -9,7 +9,7 @@ const apiKey = '&APPID=69f7a79ea60d1f056d03a841887913dc';
 // Event listener on the button
 document.getElementById('generate').addEventListener('click', performAction);
 
-//(3) Function called by event listener that does all the application
+//(3) Function called by event listener that does all the application(getting date from api, updating ui)
 function performAction(e) {
   // Variables that get the data needed for application to work:
   let zip = document.getElementById('zip').value;
@@ -21,7 +21,8 @@ function performAction(e) {
   //temperatre, date, journal
   .then((data) => {
       postData('/addEntry', {date: newDate, temperature: data.main.temp, feelings: feelings});
-    });
+    })
+    .then(updateUI)
 }
 // Function for event listener DONE
 
@@ -37,6 +38,19 @@ const retriveData = async(baseURL, zip, country, apiKey) => {
   }
 }
 // DONE - *(if error reset the function to be before performAction)*
+
+const updateUI = async() => {
+  const request = await fetch ('/all');
+  try {
+    const allData = await request.json();
+//    console.log(allData.newEntry);
+    document.getElementById('date').innerHTML = '<p>' + allData.newEntry.entryDate + '</p>';
+    document.getElementById('temp').innerHTML = '<p>' + allData.newEntry.temperature + '</p>';
+    document.getElementById('content').innerHTML = '<p>' + allData.newEntry.feelings + '</p>';
+  }catch (error) {
+    console.log('error', error)
+  }
+}
 
 /* (1) POST data to server */
 const postData = async (url = '', data = {}) => {
